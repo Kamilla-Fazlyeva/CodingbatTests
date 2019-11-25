@@ -1,6 +1,6 @@
-package com.fazlyeva.java;
+package com.fazlyeva.java.arraytasks;
 
-import com.sun.javaws.IconUtil;
+import com.fazlyeva.java.arraytasks.*;
 
 import java.util.Arrays;
 

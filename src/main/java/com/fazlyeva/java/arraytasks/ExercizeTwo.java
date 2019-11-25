@@ -1,4 +1,4 @@
-package com.fazlyeva.java;
+package com.fazlyeva.java.arraytasks;
 
 public class ExercizeTwo {
 

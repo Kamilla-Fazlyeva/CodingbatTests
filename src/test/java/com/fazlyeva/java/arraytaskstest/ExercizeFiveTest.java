@@ -1,5 +1,6 @@
-package com.fazlyeva.java;
+package com.fazlyeva.java.arraytaskstest;
 
+import com.fazlyeva.java.arraytasks.ExercizeFive;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
