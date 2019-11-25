@@ -14,15 +14,25 @@ public class Main {
         System.out.println(Arrays.toString(exercizeOne.evenOdd(nums)));
 
         ExercizeTwo exercizeTwo = new ExercizeTwo();
-        int[] nums1 = {1, 2, 3};
+        int[] numsTwo = {1, 2, 3};
         int val = 2;
-        int[] result1 = exercizeTwo.notAlone(nums1, val);
-        System.out.println(Arrays.toString(exercizeOne.evenOdd(nums1)));
+        System.out.println(Arrays.toString(exercizeOne.evenOdd(numsTwo)));
 
         ExercizeThree exercizeThree = new ExercizeThree();
-        int[] nums2 = {1, 1, 1};
+        int[] numsThree = {1, 1, 1};
         int len = 1;
-        boolean result3 = exercizeThree.sameEnds(nums2, len);
-        System.out.println(result3);
+        boolean resultThree = exercizeThree.sameEnds(numsThree, len);
+        System.out.println(resultThree);
+
+        ExercizeFour exercizeFour = new ExercizeFour();
+        int[] numsFour= {4, 2, 2, 3};
+        boolean resultFour = exercizeFour.twoTwo(numsFour);
+        System.out.println(resultFour);
+
+        ExercizeFive exercizeFive = new ExercizeFive();
+        int[] nums1 = {};
+        int[] nums2 = {};
+        int resultFive = exercizeFive.matchUp(nums1, nums2);
+        System.out.println(resultFive);
     }
 }
