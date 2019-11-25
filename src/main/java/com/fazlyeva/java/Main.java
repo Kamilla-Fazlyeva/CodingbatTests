@@ -18,5 +18,11 @@ public class Main {
         int val = 2;
         int[] result1 = exercizeTwo.notAlone(nums1, val);
         System.out.println(Arrays.toString(exercizeOne.evenOdd(nums1)));
+
+        ExercizeThree exercizeThree = new ExercizeThree();
+        int[] nums2 = {1, 1, 1};
+        int len = 1;
+        boolean result3 = exercizeThree.sameEnds(nums2, len);
+        System.out.println(result3);
     }
 }
