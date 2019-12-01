@@ -13,15 +13,15 @@ public class Main {
         System.out.println(resultTwo);
 
         ExercizeThree exercizeThree = new ExercizeThree();
-        String resultThree = exercizeThree.repeatSeparator("Word", "String", 2);
+        String resultThree = exercizeThree.repeatSeparator("abc", "", 2);
         System.out.println(resultThree);
 
         ExercizeFour exercizeFour = new ExercizeFour();
-        String resultFour = exercizeFour.repeatFront("abc", 2);
+        String resultFour = exercizeFour.repeatFront("Java", 2);
         System.out.println(resultFour);
 
         ExercizeFive exercizeFive = new ExercizeFive();
-        boolean resultFive = exercizeFive.xyBalance("");
+        boolean resultFive = exercizeFive.xyBalance("xy");
         System.out.println(result);
     }
 }

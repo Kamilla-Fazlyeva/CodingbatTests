@@ -1,63 +1,71 @@
 package com.fazlyeva.java.arraytaskstest;
 
 import com.fazlyeva.java.arraytasks.ExercizeFour;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
-class ExercizeFourTest {
+public class ExercizeFourTest {
 
     ExercizeFour exercizeFour = new ExercizeFour();
 
     @Test
-    public void ShouldReturnTrueIfTwoGoAfterTwoTest1() {
+    public void shouldReturnFalseIfThereIsNoTwoAfterTwo() {
         ///GIVEN
         int[] nums = {2, 2, 4, 2};
 
         ///WHEN
         boolean actual = exercizeFour.twoTwo(nums);
-        boolean expected = false;
 
         ///THEN
-        assertEquals(expected, actual);
+        assertTrue(!actual);
     }
 
     @Test
-    public void ShouldReturnTrueIfTwoGoAfterTwoTest2() {
+    public void shouldReturnTrueThereIsNoTwoAtAll() {
         ///GIVEN
         int[] nums = {1, 3, 4};
 
         ///WHEN
         boolean actual = exercizeFour.twoTwo(nums);
-        boolean expected = true;
 
         ///THEN
-        assertEquals(expected, actual);
+        assertTrue(actual);
     }
 
     @Test
-    public void ShouldReturnTrueIfTwoGoAfterTwoTest3() {
+    public void shouldReturnTrueIfArrayIsEmpty() {
         ///GIVEN
         int[] nums = {};
 
         ///WHEN
         boolean actual = exercizeFour.twoTwo(nums);
-        boolean expected = true;
 
         ///THEN
-        assertEquals(expected, actual);
+        assertTrue(actual);
     }
 
     @Test
-    public void ShouldReturnTrueIfTwoGoAfterTwoTest4() {
+    public void shouldReturnTrueIfEveryTwoIsNextToAnotherTwo() {
         ///GIVEN
         int[] nums = {4, 2, 2, 2};
 
         ///WHEN
         boolean actual = exercizeFour.twoTwo(nums);
-        boolean expected = true;
 
         ///THEN
-        assertEquals(expected, actual);
+        assertTrue(actual);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void shouldReturnExpectedExceptionWhenArrayIsNull() {
+        ///GIVEN
+        int[] nums = null;
+
+        ///WHEN
+        boolean actual = exercizeFour.twoTwo(nums);
+
+        ///THEN
+        assertTrue(actual);
     }
 }

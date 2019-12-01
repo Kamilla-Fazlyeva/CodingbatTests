@@ -1,67 +1,76 @@
 package com.fazlyeva.java.arraytaskstest;
 
 import com.fazlyeva.java.arraytasks.ExercizeThree;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
-class ExercizeThreeTest {
+public class ExercizeThreeTest {
 
     ExercizeThree exercizeThree = new ExercizeThree();
 
     @Test
-    public void ShouldReturnTrueIfStartAndEndSameTest1() {
+    public void shouldReturnFalseIfStartAndEndOfArrayNotTheSame() {
         ///GIVEN
         int[] nums = {5, 6, 45, 99, 13, 5, 6};
         int len = 1;
 
         ///WHEN
         boolean actual = exercizeThree.sameEnds(nums, len);
-        boolean expected = false;
 
         ///THEN
-        assertEquals(expected, actual);
+        assertTrue(!actual);
     }
 
     @Test
-    public void ShouldReturnTrueIfStartAndEndSameTest2() {
+    public void shouldReturnTrueIfStartAndEndOfArrayTheSame() {
         ///GIVEN
         int[] nums = {5, 6, 45, 99, 13, 5, 6};
         int len = 2;
 
         ///WHEN
         boolean actual = exercizeThree.sameEnds(nums, len);
-        boolean expected = true;
 
         ///THEN
-        assertEquals(expected, actual);
+        assertTrue(actual);
     }
 
     @Test
-    public void ShouldReturnTrueIfStartAndEndSameTest3() {
+    public void shouldReturnTrueIfLengthOfNumbersIsZero() {
         ///GIVEN
         int[] nums = {1, 1, 1};
         int len = 0;
 
         ///WHEN
         boolean actual = exercizeThree.sameEnds(nums, len);
-        boolean expected = true;
 
         ///THEN
-        assertEquals(expected, actual);
+        assertTrue(actual);
     }
 
     @Test
-    public void ShouldReturnTrueIfStartAndEndSameTest4() {
+    public void shouldReturnTrueIfArrayIsEmptyAndLengthOfNumbersIsZero() {
         ///GIVEN
         int[] nums = {};
         int len = 0;
 
         ///WHEN
         boolean actual = exercizeThree.sameEnds(nums, len);
-        boolean expected = true;
 
         ///THEN
-        assertEquals(expected, actual);
+       assertTrue(actual);
+    }
+
+    @Test
+    public void shouldReturnTrueEvenIfArrayIsNull() {
+        ///GIVEN
+        int[] nums = null;
+        int len = 0;
+
+        ///WHEN
+        boolean actual = exercizeThree.sameEnds(nums, len);
+
+        ///THEN
+        assertTrue(actual);
     }
 }

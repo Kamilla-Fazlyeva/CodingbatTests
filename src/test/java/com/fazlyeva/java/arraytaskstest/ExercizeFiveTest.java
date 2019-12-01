@@ -1,16 +1,16 @@
 package com.fazlyeva.java.arraytaskstest;
 
 import com.fazlyeva.java.arraytasks.ExercizeFive;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
-class ExercizeFiveTest {
+public class ExercizeFiveTest {
 
     ExercizeFive exercizeFive = new ExercizeFive();
 
     @Test
-    public void ShouldReturnCountTwoNumbersAreCloseTest1() {
+    public void shouldReturnCountThatTwoElementsDifferByTwoOrLess() {
         ///GIVEN
         int[] nums1 = {1, 2, 3};
         int[] nums2 = {2, 3, 5};
@@ -24,7 +24,7 @@ class ExercizeFiveTest {
     }
 
     @Test
-    public void ShouldReturnCountTwoNumbersAreCloseTest2() {
+    public void shouldReturnZeroIfElementsDifferMoreThanTwo() {
         ///GIVEN
         int[] nums1 = {5, 3};
         int[] nums2 = {0, 0};
@@ -38,7 +38,7 @@ class ExercizeFiveTest {
     }
 
     @Test
-    public void ShouldReturnCountTwoNumbersAreCloseTest3() {
+    public void shouldReturnZeroIfElementsAreEqual() {
         ///GIVEN
         int[] nums1 = {4, 4};
         int[] nums2 = {4, 4};
@@ -52,16 +52,29 @@ class ExercizeFiveTest {
     }
 
     @Test
-    public void ShouldReturnCountTwoNumbersAreCloseTest4() {
+    public void shouldReturnZeroIfBothArraysAreEmpty() {
         ///GIVEN
-        int[] nums1 = {4};
-        int[] nums2 = {5};
+        int[] nums1 = {};
+        int[] nums2 = {};
 
         ///WHEN
         int actual = exercizeFive.matchUp(nums1, nums2);
-        int expected = 1;
+        int expected = 0;
 
         ///THEN
         assertEquals(expected, actual);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void shouldReturnExpectedExceptionWhenArrayIsEmpty() {
+        ///GIVEN
+        int[] nums1 = null;
+        int[] nums2 = {};
+
+        ///WHEN
+        int actual = exercizeFive.matchUp(nums1, nums2);
+
+        ///THEN
+        assertEquals(NullPointerException.class, actual);
     }
 }

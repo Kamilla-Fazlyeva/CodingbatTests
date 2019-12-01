@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) {
 
         ExercizeOne exercizeOne = new ExercizeOne();
-        int[] nums = {3, 3, 2};
+        int[] nums = {3, 2, 1};
         int[] result = exercizeOne.evenOdd(nums);
         System.out.println(Arrays.toString(exercizeOne.evenOdd(nums)));
 

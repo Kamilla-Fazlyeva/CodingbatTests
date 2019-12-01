@@ -1,16 +1,16 @@
 package com.fazlyeva.java.arraytaskstest;
 
 import com.fazlyeva.java.arraytasks.ExercizeTwo;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
-class ExercizeTwoTest {
+public class ExercizeTwoTest {
 
     ExercizeTwo exercizeTwo = new ExercizeTwo();
 
     @Test
-    public void ShouldReturnArrayAloneValueReplacedTest1() {
+    public void shouldReturnArrayWhereAloneValueReplacedByLargerOne() {
         ///GIVEN
         int[] nums = {1, 2, 3, 2, 5, 2};
         int val = 2;
@@ -24,7 +24,7 @@ class ExercizeTwoTest {
     }
 
     @Test
-    public void ShouldReturnArrayAloneValueReplacedTest2() {
+    public void shouldReturnEmptyArrayWhenNoNumbersAtAll() {
         ///GIVEN
         int[] nums = {};
         int val = 3;
@@ -38,7 +38,7 @@ class ExercizeTwoTest {
     }
 
     @Test
-    public void ShouldReturnArrayAloneValueReplacedTest3() {
+    public void shouldReturnOriginalArrayWhenOnlyOneNumber() {
         ///GIVEN
         int[] nums = {2};
         int val = 2;
@@ -52,7 +52,7 @@ class ExercizeTwoTest {
     }
 
     @Test
-    public void ShouldReturnArrayAloneValueReplacedTest4() {
+    public void shouldReturnOriginalArrayWhenNoOneIsAloneTestOne() {
         ///GIVEN
         int[] nums = {1, 1, 1, 2};
         int val = 1;
@@ -66,7 +66,7 @@ class ExercizeTwoTest {
     }
 
     @Test
-    public void ShouldReturnArrayAloneValueReplacedTest5() {
+    public void shouldReturnOriginalArrayWhenNoOneIsAloneTestTwo() {
         ///GIVEN
         int[] nums = {1, 1, 1};
         int val = 1;
@@ -77,5 +77,18 @@ class ExercizeTwoTest {
 
         ///THEN
         assertArrayEquals(expected, actual);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void shouldReturnExpectedExceptionWhenArrayIsNull() {
+        ///GIVEN
+        int[] nums = null;
+        int val = 1;
+
+        ///WHEN
+        int[] actual = exercizeTwo.notAlone(nums, val);
+
+        ///THEN
+        assertEquals(NullPointerException.class, actual);
     }
 }

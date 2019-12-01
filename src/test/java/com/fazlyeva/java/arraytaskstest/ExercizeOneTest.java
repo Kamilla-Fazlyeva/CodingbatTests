@@ -1,15 +1,16 @@
 package com.fazlyeva.java.arraytaskstest;
 
 import com.fazlyeva.java.arraytasks.ExercizeOne;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
-class ExercizeOneTest {
+public class ExercizeOneTest {
 
     ExercizeOne exercizeOne = new ExercizeOne();
 
-    @org.junit.jupiter.api.Test
-    public void ShouldReturnEvenNumbersBeforeTest1() {
+    @org.junit.Test
+    public void shouldReturnEvenNumbersBeforeOddTestOne() {
         ///GIVEN
         int[] nums = {3, 3, 2};
 
@@ -21,8 +22,8 @@ class ExercizeOneTest {
         assertArrayEquals(expected, actual);
     }
 
-    @org.junit.jupiter.api.Test
-    public void ShouldReturnEvenNumbersBeforeTest2() {
+    @org.junit.Test
+    public void shouldReturnEvenNumbersBeforeTestTwo() {
         ///GIVEN
         int[] nums = {1, 1, 0, 1, 0, 1};
 
@@ -34,8 +35,8 @@ class ExercizeOneTest {
         assertArrayEquals(expected, actual);
     }
 
-    @org.junit.jupiter.api.Test
-    public void ShouldReturnEvenNumbersBeforeTest3() {
+    @org.junit.Test
+    public void shouldReturnEmptyArrayWhenNoNumbers() {
         ///GIVEN
         int[] nums = {};
 
@@ -47,8 +48,8 @@ class ExercizeOneTest {
         assertArrayEquals(expected, actual);
     }
 
-    @org.junit.jupiter.api.Test
-    public void ShouldReturnEvenNumbersBeforeTest4() {
+    @org.junit.Test
+    public void shouldReturnOriginalArrayWhenContainsOneNumber() {
         ///GIVEN
         int[] nums = {3};
 
@@ -58,5 +59,17 @@ class ExercizeOneTest {
 
         ///THEN
         assertArrayEquals(expected, actual);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void shouldReturnExpectedExceptionWhenArrayIsNull() {
+        ///GIVEN
+        int[] nums = null;
+
+        ///WHEN
+        int[] actual = exercizeOne.evenOdd(nums);
+
+        ///THEN
+        assertEquals(NullPointerException.class, actual);
     }
 }

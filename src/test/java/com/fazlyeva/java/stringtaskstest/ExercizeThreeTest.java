@@ -1,16 +1,16 @@
 package com.fazlyeva.java.stringtaskstest;
 
 import com.fazlyeva.java.stringtasks.ExercizeThree;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
-class ExercizeThreeTest {
+public class ExercizeThreeTest {
 
     ExercizeThree exercizeThree = new ExercizeThree();
 
     @Test
-    public void ShouldReturnStringWithSeparatorTest1() {
+    public void shouldReturnEmptyStringWhenCountOccurrencesIsZero() {
         ///GIVEN
         String word = "AAA";
         String sep = "";
@@ -25,7 +25,7 @@ class ExercizeThreeTest {
     }
 
     @Test
-    public void ShouldReturnStringWithSeparatorTest2() {
+    public void shouldReturnStringMadeOfWordWithSeparator() {
         ///GIVEN
         String word = "abc";
         String sep = "XX";
@@ -40,7 +40,7 @@ class ExercizeThreeTest {
     }
 
     @Test
-    public void ShouldReturnStringWithSeparatorTest3() {
+    public void shouldReturnOnlyOneGivenWordWhenCountIsEqualsOne() {
         ///GIVEN
         String word = "This";
         String sep = "And";
@@ -55,15 +55,45 @@ class ExercizeThreeTest {
     }
 
     @Test
-    public void ShouldReturnStringWithSeparatorTest4() {
+    public void shouldReturnOnlyGivenWordIfSeparatorIsEmptyString() {
         ///GIVEN
         String word = "AAA";
-        String sep = "And";
+        String sep = "";
         int count = 1;
 
         ///WHEN
         String actual = exercizeThree.repeatSeparator(word, sep, count);
         String expected = "AAA";
+
+        ///THEN
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldReturnNewStringEvenIfOneOfGivenStringsIsNull() {
+        ///GIVEN
+        String word = "AAA";
+        String sep = null;
+        int count = 1;
+
+        ///WHEN
+        String actual = exercizeThree.repeatSeparator(word, sep, count);
+        String expected = "AAA";
+
+        ///THEN
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldReturnNewStringEvenIfBothOfGivenStringsAreNull() {
+        ///GIVEN
+        String word = null;
+        String sep = null;
+        int count = 1;
+
+        ///WHEN
+        String actual = exercizeThree.repeatSeparator(word, sep, count);
+        String expected = "null";
 
         ///THEN
         assertEquals(expected, actual);

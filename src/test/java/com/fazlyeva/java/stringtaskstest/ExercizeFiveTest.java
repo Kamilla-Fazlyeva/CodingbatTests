@@ -1,76 +1,83 @@
 package com.fazlyeva.java.stringtaskstest;
 
 import com.fazlyeva.java.stringtasks.ExercizeFive;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
-class ExercizeFiveTest {
+public class ExercizeFiveTest {
 
     ExercizeFive exercizeFive = new ExercizeFive();
 
     @Test
-    public void ShouldReturnTrueIfStringIsXYBalancedTest1() {
+    public void shouldReturnTrueIfStringIsEmpty() {
         ///GIVEN
         String str = "";
 
         ///WHEN
         boolean actual = exercizeFive.xyBalance(str);
-        boolean expected = true;
 
         ///THEN
-        assertEquals(expected, actual);
+        assertTrue(actual);
     }
 
     @Test
-    public void ShouldReturnTrueIfStringIsXYBalancedTest2() {
+    public void shouldReturnTrueIfStringIsXYBalanced() {
         ///GIVEN
         String str = "aaxbby";
 
         ///WHEN
         boolean actual = exercizeFive.xyBalance(str);
-        boolean expected = true;
 
         ///THEN
-        assertEquals(expected, actual);
+        assertTrue(actual);
     }
 
     @Test
-    public void ShouldReturnTrueIfStringIsXYBalancedTest3() {
+    public void shouldReturnFalseIfThereIsNoYForEveryX() {
         ///GIVEN
         String str = "yxyxyxyx";
 
         ///WHEN
         boolean actual = exercizeFive.xyBalance(str);
-        boolean expected = false;
 
         ///THEN
-        assertEquals(expected, actual);
+        assertFalse(actual);
     }
 
     @Test
-    public void ShouldReturnTrueIfStringIsXYBalancedTest4() {
+    public void shouldReturnTrueIfThereAreNoXYAtAll() {
         ///GIVEN
         String str = "bbb";
 
         ///WHEN
         boolean actual = exercizeFive.xyBalance(str);
-        boolean expected = true;
 
         ///THEN
-        assertEquals(expected, actual);
+        assertTrue(actual);
     }
 
     @Test
-    public void ShouldReturnTrueIfStringIsXYBalancedTest5() {
+    public void shouldReturnTrueIfStringContainsOnlyOneY() {
         ///GIVEN
         String str = "y";
 
         ///WHEN
         boolean actual = exercizeFive.xyBalance(str);
-        boolean expected = true;
 
         ///THEN
-        assertEquals(expected, actual);
+        assertTrue(actual);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void shouldReturnExpectedExceptionWhenStringIsNull() {
+        ///GIVEN
+        String str = null;
+
+        ///WHEN
+        boolean actual = exercizeFive.xyBalance(str);
+
+        ///THEN
+        assertTrue(actual);
     }
 }

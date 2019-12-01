@@ -1,16 +1,16 @@
 package com.fazlyeva.java.stringtaskstest;
 
 import com.fazlyeva.java.stringtasks.ExercizeOne;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
-class ExercizeOneTest {
+public class ExercizeOneTest {
 
     ExercizeOne exercizeOne = new ExercizeOne();
 
     @Test
-    public void ShouldReturnStringFirstCharReplacedTest1() {
+    public void shouldReturnOriginalStringIfNoCharsAtAll() {
         ///GIVEN
         String str = "";
 
@@ -23,7 +23,7 @@ class ExercizeOneTest {
     }
 
     @Test
-    public void ShouldReturnStringFirstCharReplacedTest2() {
+    public void shouldReturnStringWhereFirstCharComeAfterNextTwo() {
         ///GIVEN
         String str = "chocolate";
 
@@ -36,7 +36,7 @@ class ExercizeOneTest {
     }
 
     @Test
-    public void ShouldReturnStringFirstCharReplacedTest3() {
+    public void shouldReturnEmptyStringWhenLengthIsLessThanThree() {
         ///GIVEN
         String str = "xy";
 
@@ -49,7 +49,7 @@ class ExercizeOneTest {
     }
 
     @Test
-    public void ShouldReturnStringFirstCharReplacedTest4() {
+    public void shouldReturnStringWhereFirstCharComeAfterNextTwoCaseTwo() {
         ///GIVEN
         String str = "xabxabxabxabxabxabxab";
 
@@ -59,5 +59,17 @@ class ExercizeOneTest {
 
         ///THEN
         assertEquals(expected, actual);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void shouldReturnExpectedExceptionWhenStringIsNull() {
+        ///GIVEN
+        String str = null;
+
+        ///WHEN
+        String actual = exercizeOne.oneTwo(str);
+
+        ///THEN
+        assertEquals(NullPointerException.class, actual);
     }
 }
