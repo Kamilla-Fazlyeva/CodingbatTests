@@ -2,12 +2,11 @@ package com.fazlyeva.java.stringtaskstest;
 
 import com.fazlyeva.java.stringtasks.ExercizeFour;
 import org.junit.Test;
-
 import static org.junit.Assert.*;
 
 public class ExercizeFourTest {
 
-    ExercizeFour exercizeFour = new ExercizeFour();
+    private ExercizeFour exercizeFour = new ExercizeFour();
 
     @Test
     public void shouldReturnEmptyStringWhereThereIsNothingToRepeat() {
@@ -73,8 +72,5 @@ public class ExercizeFourTest {
 
         ///WHEN
         String actual = exercizeFour.repeatFront(str, n);
-
-        ///THEN
-        assertEquals(NullPointerException.class, actual);
     }
 }

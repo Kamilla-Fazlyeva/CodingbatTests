@@ -2,12 +2,11 @@ package com.fazlyeva.java.arraytaskstest;
 
 import com.fazlyeva.java.arraytasks.ExercizeFive;
 import org.junit.Test;
-
 import static org.junit.Assert.*;
 
 public class ExercizeFiveTest {
 
-    ExercizeFive exercizeFive = new ExercizeFive();
+    private ExercizeFive exercizeFive = new ExercizeFive();
 
     @Test
     public void shouldReturnCountThatTwoElementsDifferByTwoOrLess() {
@@ -73,8 +72,5 @@ public class ExercizeFiveTest {
 
         ///WHEN
         int actual = exercizeFive.matchUp(nums1, nums2);
-
-        ///THEN
-        assertEquals(NullPointerException.class, actual);
     }
 }

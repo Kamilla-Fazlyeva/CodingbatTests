@@ -2,12 +2,11 @@ package com.fazlyeva.java.arraytaskstest;
 
 import com.fazlyeva.java.arraytasks.ExercizeThree;
 import org.junit.Test;
-
 import static org.junit.Assert.*;
 
 public class ExercizeThreeTest {
 
-    ExercizeThree exercizeThree = new ExercizeThree();
+    private ExercizeThree exercizeThree = new ExercizeThree();
 
     @Test
     public void shouldReturnFalseIfStartAndEndOfArrayNotTheSame() {
@@ -69,8 +68,5 @@ public class ExercizeThreeTest {
 
         ///WHEN
         boolean actual = exercizeThree.sameEnds(nums, len);
-
-        ///THEN
-        assertTrue(actual);
     }
 }

@@ -2,14 +2,13 @@ package com.fazlyeva.java.arraytaskstest;
 
 import com.fazlyeva.java.arraytasks.ExercizeOne;
 import org.junit.Test;
-
 import static org.junit.Assert.*;
 
 public class ExercizeOneTest {
 
-    ExercizeOne exercizeOne = new ExercizeOne();
+    private ExercizeOne exercizeOne = new ExercizeOne();
 
-    @org.junit.Test
+    @Test
     public void shouldReturnEvenNumbersBeforeOddTestOne() {
         ///GIVEN
         int[] nums = {3, 3, 2};
@@ -22,7 +21,7 @@ public class ExercizeOneTest {
         assertArrayEquals(expected, actual);
     }
 
-    @org.junit.Test
+    @Test
     public void shouldReturnEvenNumbersBeforeTestTwo() {
         ///GIVEN
         int[] nums = {1, 1, 0, 1, 0, 1};
@@ -35,7 +34,7 @@ public class ExercizeOneTest {
         assertArrayEquals(expected, actual);
     }
 
-    @org.junit.Test
+    @Test
     public void shouldReturnEmptyArrayWhenNoNumbers() {
         ///GIVEN
         int[] nums = {};
@@ -48,7 +47,7 @@ public class ExercizeOneTest {
         assertArrayEquals(expected, actual);
     }
 
-    @org.junit.Test
+    @Test
     public void shouldReturnOriginalArrayWhenContainsOneNumber() {
         ///GIVEN
         int[] nums = {3};
@@ -68,8 +67,5 @@ public class ExercizeOneTest {
 
         ///WHEN
         int[] actual = exercizeOne.evenOdd(nums);
-
-        ///THEN
-        assertEquals(NullPointerException.class, actual);
     }
 }

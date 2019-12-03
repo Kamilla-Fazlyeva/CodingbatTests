@@ -2,12 +2,11 @@ package com.fazlyeva.java.arraytaskstest;
 
 import com.fazlyeva.java.arraytasks.ExercizeFour;
 import org.junit.Test;
-
 import static org.junit.Assert.*;
 
 public class ExercizeFourTest {
 
-    ExercizeFour exercizeFour = new ExercizeFour();
+    private ExercizeFour exercizeFour = new ExercizeFour();
 
     @Test
     public void shouldReturnFalseIfThereIsNoTwoAfterTwo() {
@@ -64,8 +63,5 @@ public class ExercizeFourTest {
 
         ///WHEN
         boolean actual = exercizeFour.twoTwo(nums);
-
-        ///THEN
-        assertTrue(actual);
     }
 }

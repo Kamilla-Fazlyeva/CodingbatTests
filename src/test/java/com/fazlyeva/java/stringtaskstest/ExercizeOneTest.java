@@ -2,12 +2,11 @@ package com.fazlyeva.java.stringtaskstest;
 
 import com.fazlyeva.java.stringtasks.ExercizeOne;
 import org.junit.Test;
-
 import static org.junit.Assert.*;
 
 public class ExercizeOneTest {
 
-    ExercizeOne exercizeOne = new ExercizeOne();
+    private ExercizeOne exercizeOne = new ExercizeOne();
 
     @Test
     public void shouldReturnOriginalStringIfNoCharsAtAll() {
@@ -68,8 +67,5 @@ public class ExercizeOneTest {
 
         ///WHEN
         String actual = exercizeOne.oneTwo(str);
-
-        ///THEN
-        assertEquals(NullPointerException.class, actual);
     }
 }

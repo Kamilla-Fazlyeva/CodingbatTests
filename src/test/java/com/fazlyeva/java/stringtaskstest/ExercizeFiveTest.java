@@ -2,12 +2,11 @@ package com.fazlyeva.java.stringtaskstest;
 
 import com.fazlyeva.java.stringtasks.ExercizeFive;
 import org.junit.Test;
-
 import static org.junit.Assert.*;
 
 public class ExercizeFiveTest {
 
-    ExercizeFive exercizeFive = new ExercizeFive();
+    private ExercizeFive exercizeFive = new ExercizeFive();
 
     @Test
     public void shouldReturnTrueIfStringIsEmpty() {
@@ -76,8 +75,5 @@ public class ExercizeFiveTest {
 
         ///WHEN
         boolean actual = exercizeFive.xyBalance(str);
-
-        ///THEN
-        assertTrue(actual);
     }
 }

@@ -2,12 +2,11 @@ package com.fazlyeva.java.stringtaskstest;
 
 import com.fazlyeva.java.stringtasks.ExercizeThree;
 import org.junit.Test;
-
 import static org.junit.Assert.*;
 
 public class ExercizeThreeTest {
 
-    ExercizeThree exercizeThree = new ExercizeThree();
+    private ExercizeThree exercizeThree = new ExercizeThree();
 
     @Test
     public void shouldReturnEmptyStringWhenCountOccurrencesIsZero() {

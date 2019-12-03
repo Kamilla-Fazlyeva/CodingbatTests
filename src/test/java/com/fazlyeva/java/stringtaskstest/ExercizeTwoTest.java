@@ -2,12 +2,11 @@ package com.fazlyeva.java.stringtaskstest;
 
 import com.fazlyeva.java.stringtasks.ExercizeTwo;
 import org.junit.Test;
-
 import static org.junit.Assert.*;
 
 public class ExercizeTwoTest {
 
-    ExercizeTwo exercizeTwo = new ExercizeTwo();
+    private ExercizeTwo exercizeTwo = new ExercizeTwo();
 
     @Test
     public void shouldReturnFalseIfFirstThreeCharsDoesntAppearAnywhere() {
@@ -69,8 +68,5 @@ public class ExercizeTwoTest {
 
         ///WHEN
         boolean actual = exercizeTwo.prefixAgain(str, n);
-
-        ///THEN
-        assertTrue(actual);
     }
 }

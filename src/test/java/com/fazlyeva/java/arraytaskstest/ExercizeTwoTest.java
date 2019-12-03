@@ -2,12 +2,11 @@ package com.fazlyeva.java.arraytaskstest;
 
 import com.fazlyeva.java.arraytasks.ExercizeTwo;
 import org.junit.Test;
-
 import static org.junit.Assert.*;
 
 public class ExercizeTwoTest {
 
-    ExercizeTwo exercizeTwo = new ExercizeTwo();
+    private ExercizeTwo exercizeTwo = new ExercizeTwo();
 
     @Test
     public void shouldReturnArrayWhereAloneValueReplacedByLargerOne() {
@@ -87,8 +86,5 @@ public class ExercizeTwoTest {
 
         ///WHEN
         int[] actual = exercizeTwo.notAlone(nums, val);
-
-        ///THEN
-        assertEquals(NullPointerException.class, actual);
     }
 }
